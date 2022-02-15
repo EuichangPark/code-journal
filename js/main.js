@@ -1,12 +1,12 @@
 /* global data */
 /* exported data */
-var $photoUrl = document.querySelector('.entry-image');
-var $photoPreview = document.querySelector('#preview');
-var placeholder = 'images/placeholder-image-square.jpg';
-$photoUrl.addEventListener('input', handleInput);
+var $photoUrlEl = document.querySelector('#photo-url');
+$photoUrlEl.addEventListener('input', handleInput);
 
 function handleInput(event) {
-  $photoPreview.setAttribute('src', placeholder);
+  var $photoUrlValue = event.target.value;
+  var $image = document.querySelector('#preview');
+  $image.setAttribute('src', $photoUrlValue);
 }
 
 var $formData = document.querySelector('#entry-form');
