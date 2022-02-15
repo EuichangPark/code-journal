@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: rgb(214, 224, 255);
+}
+
+.entry-image {
+  max-width: 100%;
+}
+
+header {
+  background-color: rgb(0, 87, 201);
+  padding: 1px;
+  color: white;
+}
+
+textarea {
+  margin-top: 2px;
+}
+
+#title {
+  margin-bottom: 16px;
+}
+
+input {
+  border-radius: 1px solid;
+  border-color: gray;
+}
+
+input:focus {
+  outline-color: blue;
+}
+
+.notes-section {
+  margin-top: 16px;
+}
