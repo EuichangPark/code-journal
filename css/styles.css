@@ -63,6 +63,7 @@ form {
   background-color: rgb(0, 87, 201);
   letter-spacing: 2px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 textarea {
@@ -75,4 +76,32 @@ textarea {
 
 textarea:focus {
   outline-color: rgb(0, 87, 201);
+}
+
+li {
+  list-style-type: none;
+  display: flex;
+}
+
+.entry-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new {
+  width: 4rem;
+  height: 26px;
+  margin-top: 20px;
+  background-color: rgb(0, 87, 201);
+  letter-spacing: 2px;
+  border-radius: 2px;
+  border: none;
+  color: white;
+  padding: 5px;
+  margin-right: 8px;
+}
+
+.no-entry-message {
+  text-align: center;
+  margin-top: 40px;
 }
