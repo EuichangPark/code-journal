@@ -13,6 +13,7 @@ img {
   background-color: rgb(0, 87, 201);
   padding: 2px;
   color: white;
+  display: flex;
 }
 
 h3 {
@@ -117,4 +118,14 @@ ul {
 
 .entry-name {
   margin-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-entries {
+  margin-left: 1rem;
+  margin-top: 1.3rem;
 }
