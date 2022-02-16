@@ -15,13 +15,13 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="column-full">
-      <h3>Code Journal</h3>
-    </div>
-  </header>
-
   <main class="container">
+    <header>
+      <div class="column-full header3">
+        <h3>Code Journal</h3>
+      </div>
+    </header>
+
     <form class="row" id="entry-form" data-view="entry-form">
       <div class="column-full">
         <h2>New Entry</h2>
@@ -45,16 +45,15 @@
       <div class="column-full notes-section">
         <label for="notes">Notes</label>
         <div>
-          <textarea cols="45" rows="7" id="notes" required></textarea>
+          <textarea cols="110" rows="8" id="notes" required></textarea>
         </div>
       </div>
 
       <div class="row-btn column-full">
-        <button type="submit" class="save-btn">Save</button>
+        <button type="submit" class="save-btn">SAVE</button>
       </div>
 
     </form>
-
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
