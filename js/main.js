@@ -20,7 +20,7 @@ function handleSubmit(event) {
   myObject.title = $title;
   myObject.url = $url;
   myObject.notes = $notes;
-  myObject.entryId = data.nextEntryId + 1;
+  myObject.entryId = data.nextEntryId;
   data.nextEntryId++;
   data.entries.unshift(myObject);
   $formData.reset();
