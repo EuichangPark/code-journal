@@ -22,38 +22,40 @@
       </div>
     </header>
 
-    <form class="row" id="entry-form" data-view="entry-form">
-      <div class="column-full">
-        <h2>New Entry</h2>
-      </div>
-
-      <div class="column-half">
-        <img src="images/placeholder-image-square.jpg" id="preview" alt="placehodler-image" class="entry-image">
-      </div>
-
-      <div class="column-half">
-        <label for="title" class="title-form">Title</label>
-        <div>
-          <input type="text" id="title" required>
+    <div data-view="entry-form">
+      <form class="row" id="entry-form">
+        <div class="column-full">
+          <h2>New Entry</h2>
         </div>
-        <label for="photo-url" class="photo-url">Photo URL</label>
-        <div>
-          <input type="text" id="photo-url" required>
+
+        <div class="column-half">
+          <img src="images/placeholder-image-square.jpg" id="preview" alt="placehodler-image" class="entry-image">
         </div>
-      </div>
 
-      <div class="column-full notes-section">
-        <label for="notes">Notes</label>
-        <div>
-          <textarea cols="110" rows="8" id="notes" required></textarea>
+        <div class="column-half">
+          <label for="title" class="title-form">Title</label>
+          <div>
+            <input type="text" id="title" required>
+          </div>
+          <label for="photo-url" class="photo-url">Photo URL</label>
+          <div>
+            <input type="text" id="photo-url" required>
+          </div>
         </div>
-      </div>
 
-      <div class="row-btn column-full">
-        <button type="submit" class="save-btn">SAVE</button>
-      </div>
+        <div class="column-full notes-section">
+          <label for="notes">Notes</label>
+          <div>
+            <textarea cols="110" rows="8" id="notes" required></textarea>
+          </div>
+        </div>
 
-    </form>
+        <div class="row-btn column-full">
+          <button type="submit" class="save-btn">SAVE</button>
+        </div>
+      </form>
+    </div>
+
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
