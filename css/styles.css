@@ -98,10 +98,23 @@ li {
   border: none;
   color: white;
   padding: 5px;
-  margin-right: 8px;
+  margin-right: 2px;
 }
 
 .no-entry-message {
   text-align: center;
   margin-top: 40px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+.entry-image {
+  padding-left: 0;
+  max-width: 100%;
+}
+
+.entry-name {
+  margin-left: 0;
 }

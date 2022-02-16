@@ -25,5 +25,4 @@ function handleSubmit(event) {
   data.entries.unshift(myObject);
   $formData.reset();
 }
-
 $formData.addEventListener('submit', handleSubmit);
