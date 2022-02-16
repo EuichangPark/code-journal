@@ -26,3 +26,62 @@ function handleSubmit(event) {
   $formData.reset();
 }
 $formData.addEventListener('submit', handleSubmit);
+
+var $entryNotes = document.querySelector('#notes').value;
+var $photoUrl = document.querySelector('#photo-url').value;
+function journalEntry(entry) {
+  var li = document.createElement('li');
+  li.setAttribute('class', 'row');
+  var halfDiv = document.createElement('div');
+  halfDiv.setAttribute('class', 'column-half');
+  li.appendChild(halfDiv);
+  var entryImage = document.createElement('img');
+  entryImage.setAttribute('src', $photoUrl);
+  halfDiv.appendChild(entryImage);
+  var halfDiv2 = document.createElement('div');
+  halfDiv2.setAttribute('class', 'column-half');
+  li.appendChild(halfDiv2);
+  var h3 = document.createElement('h3');
+  h3.setAttribute('class', 'entry-name');
+  halfDiv2.appendChild(h3);
+  var paragraph = document.createElement('p');
+  paragraph.textContent = $entryNotes;
+  halfDiv2.appendChild(paragraph);
+  return li;
+}
+
+var $ul = document.querySelector('ul');
+var $noEntryMessage = document.querySelector('.no-entry-message');
+
+document.addEventListener('DOMContentLoaded', function (event) {
+  for (var i = 0; i < data.entries.length; i++) {
+    var recentEntry = journalEntry(data.entries[i]);
+    $ul.appendChild(recentEntry);
+  }
+  if (data.entries.length !== 0) {
+    $noEntryMessage.className = '.no-entry-message hidden';
+  }
+});
+
+/*
+        <li class="row">
+          <div class="column-half">
+            <img class="entry-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVIecSW4smYKnkySK-C7HrZKCP4KkBcLo8-Q&usqp=CAU" alt="lovelace">
+          </div>
+          <div class="column-half">
+            <h3 class="entry-name">Ada Lovelace</h3>
+            <p>Augusta Ada king, Countess of Lovelace was
+              and English mathematician and writer,
+              chiefly known for her work on Charles
+              babbage's proposed mechanical
+              general-purpose computer, the Analytical
+              Engine.
+            </p>
+            <p>She was the first to recognize that the
+              machine ahd applications beyond pure
+              calculation, and to have published the first
+              algorithm intended to be carried out by
+              such a machine.
+            </p>
+          </div>
+        </li> */
