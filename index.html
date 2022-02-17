@@ -24,13 +24,13 @@
     </header>
 
     <div data-view="entry-form">
-      <form class="row" id="entry-form">
+      <form class="row show" id="entry-form">
         <div class="column-full">
           <h2>New Entry</h2>
         </div>
 
         <div class="column-half">
-          <img src="images/placeholder-image-square.jpg" id="preview" alt="placehodler-image" class="entry-image">
+          <img src="images/placeholder-image-square.jpg" id="preview" alt="placeholder-image" class="entry-image">
         </div>
 
         <div class="column-half">
@@ -57,16 +57,16 @@
       </form>
     </div>
 
-    <div id="entries" class="hidden" data-view="entries">
+    <div id="entries" class="show" data-view="entries">
       <header>
         <div class="column-full header3">
           <h3>Code Journal</h3>
         </div>
       </header>
       <div class="entry-row">
-        <h2>Entries</h2><button class="new">NEW</button>
+        <h2>Entries</h2><button class="new" data-view="entry-form">NEW</button>
       </div>
-      <p class="no-entry-message hidden">No Entries have been recorded.</p>
+      <p class="no-entry-message">No Entries have been recorded.</p>
       <ul>
         <li></li>
       </ul>

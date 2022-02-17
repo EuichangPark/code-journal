@@ -27,39 +27,38 @@ function handleSubmit(event) {
 }
 $formData.addEventListener('submit', handleSubmit);
 
-var $entryNotes = document.querySelector('#notes').value;
-var $photoUrl = document.querySelector('#photo-url').value;
-function journalEntry(entry) {
+function renderEntry(entry) {
   var li = document.createElement('li');
   li.setAttribute('class', 'row');
   var halfDiv = document.createElement('div');
   halfDiv.setAttribute('class', 'column-half');
   li.appendChild(halfDiv);
   var entryImage = document.createElement('img');
-  entryImage.setAttribute('src', $photoUrl);
+  entryImage.setAttribute('src', entry.url);
   halfDiv.appendChild(entryImage);
   var halfDiv2 = document.createElement('div');
   halfDiv2.setAttribute('class', 'column-half');
   li.appendChild(halfDiv2);
   var h3 = document.createElement('h3');
   h3.setAttribute('class', 'entry-name');
+  h3.textContent = entry.title;
   halfDiv2.appendChild(h3);
   var paragraph = document.createElement('p');
-  paragraph.textContent = $entryNotes;
+  paragraph.textContent = entry.notes;
   halfDiv2.appendChild(paragraph);
   return li;
 }
 
-var $ul = document.querySelector('ul');
-var $noEntryMessage = document.querySelector('.no-entry-message');
-
 document.addEventListener('DOMContentLoaded', function (event) {
+  var $ul = document.querySelector('ul');
+  var $noEntryMessage = document.querySelector('.no-entry-message');
   for (var i = 0; i < data.entries.length; i++) {
-    var recentEntry = journalEntry(data.entries[i]);
-    $ul.appendChild(recentEntry);
-  }
-  if (data.entries.length !== 0) {
-    $noEntryMessage.className = '.no-entry-message hidden';
+    if (data.entries.length !== 0) {
+      var entryIdNumber = renderEntry(data.entries[i]);
+      $ul.appendChild(entryIdNumber);
+    } else {
+      $noEntryMessage.className = 'no-entry-message';
+    }
   }
 });
 
