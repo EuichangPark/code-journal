@@ -82,6 +82,7 @@ textarea:focus {
 li {
   list-style-type: none;
   display: flex;
+  margin-top: 1.5rem;
 }
 
 .entry-row {
@@ -128,4 +129,9 @@ a {
 .nav-entries {
   margin-left: 1rem;
   margin-top: 1.3rem;
+}
+
+nav {
+  display: flex;
+  text-align: center;
 }

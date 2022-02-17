@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       var entryIdNumber = renderEntry(data.entries[i]);
       $ul.appendChild(entryIdNumber);
     } else {
-      $noEntryMessage.className = 'no-entry-message';
+      $noEntryMessage.className = 'show no-entry-message';
     }
   }
 });
