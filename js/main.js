@@ -9,7 +9,7 @@ function handleInput(event) {
   $image.setAttribute('src', $photoUrlValue);
 }
 
-var $formData = document.querySelector('#entry-form');
+var $entryForm = document.querySelector('#entry-form');
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -23,9 +23,9 @@ function handleSubmit(event) {
   myObject.entryId = data.nextEntryId;
   data.nextEntryId++;
   data.entries.unshift(myObject);
-  $formData.reset();
+  $entryForm.reset();
 }
-$formData.addEventListener('submit', handleSubmit);
+$entryForm.addEventListener('submit', handleSubmit);
 
 function renderEntry(entry) {
   var li = document.createElement('li');
@@ -61,6 +61,28 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
   }
 });
+
+var $navItem = document.querySelector('a');
+$navItem.addEventListener('click', viewCheck);
+
+var $newButton = document.querySelector('.new');
+$newButton.addEventListener('click', viewCheck);
+
+function viewCheck() {
+  handleViewChange(event.target.getAttribute('data-view'));
+}
+
+var $views = document.querySelectorAll('.view');
+function handleViewChange(viewName) {
+  for (var i = 0; i < $views.length; i++) {
+    if ($views[i].getAttribute('data-view') !== viewName) {
+      $views[i].className = 'view hidden';
+    } else {
+      $views[i].className = 'view';
+    }
+  }
+  data.view = viewName;
+}
 
 /*
         <li class="row">
