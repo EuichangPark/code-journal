@@ -24,6 +24,7 @@ function handleSubmit(event) {
   data.nextEntryId++;
   data.entries.unshift(myObject);
   $entryForm.reset();
+
 }
 $entryForm.addEventListener('submit', handleSubmit);
 
@@ -53,12 +54,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
   var $ul = document.querySelector('ul');
   var $noEntryMessage = document.querySelector('.no-entry-message');
   for (var i = 0; i < data.entries.length; i++) {
+    var entryIdNumber = renderEntry(data.entries[i]);
+    $ul.appendChild(entryIdNumber);
     if (data.entries.length !== 0) {
-      var entryIdNumber = renderEntry(data.entries[i]);
-      $ul.appendChild(entryIdNumber);
-    } else {
-      $noEntryMessage.className = 'show no-entry-message';
+      $noEntryMessage.className = 'hidden no-entry-message';
     }
+    handleViewChange(data.view);
   }
 });
 
