@@ -13,6 +13,8 @@ var $entryForm = document.querySelector('#entry-form');
 
 function handleSubmit(event) {
   event.preventDefault();
+  var $noEntryMessage = document.querySelector('.no-entry-message');
+  var $image = document.querySelector('#preview');
   var myObject = {};
   var $title = document.querySelector('#title').value;
   var $url = document.querySelector('#photo-url').value;
@@ -24,6 +26,8 @@ function handleSubmit(event) {
   data.nextEntryId++;
   data.entries.unshift(myObject);
   $entryForm.reset();
+  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $noEntryMessage.className = 'hidden no-entry-message';
 
 }
 $entryForm.addEventListener('submit', handleSubmit);
