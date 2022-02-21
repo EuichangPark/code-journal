@@ -48,6 +48,10 @@ function renderEntry(entry) {
   h3.setAttribute('class', 'entry-name');
   h3.textContent = entry.title;
   halfDiv2.appendChild(h3);
+  var icon = document.createElement('i');
+  h3.appendChild(icon);
+  icon.setAttribute('class', 'fas fa-pencil-alt');
+
   var paragraph = document.createElement('p');
   paragraph.textContent = entry.notes;
   halfDiv2.appendChild(paragraph);
@@ -88,26 +92,3 @@ function handleViewChange(viewName) {
   }
   data.view = viewName;
 }
-
-/*
-        <li class="row">
-          <div class="column-half">
-            <img class="entry-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVIecSW4smYKnkySK-C7HrZKCP4KkBcLo8-Q&usqp=CAU" alt="lovelace">
-          </div>
-          <div class="column-half">
-            <h3 class="entry-name">Ada Lovelace</h3>
-            <p>Augusta Ada king, Countess of Lovelace was
-              and English mathematician and writer,
-              chiefly known for her work on Charles
-              babbage's proposed mechanical
-              general-purpose computer, the Analytical
-              Engine.
-            </p>
-            <p>She was the first to recognize that the
-              machine ahd applications beyond pure
-              calculation, and to have published the first
-              algorithm intended to be carried out by
-              such a machine.
-            </p>
-          </div>
-        </li> */
